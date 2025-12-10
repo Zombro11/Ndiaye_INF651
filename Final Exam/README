@@ -1,0 +1,54 @@
+# Cleat Store Website – README
+
+## Overview
+
+This website is a simple front‑end application for browsing and purchasing soccer cleats. It includes a Home page, Products page, About page, and Contact page. The site is fully client‑side (HTML/CSS/JS) and requires no special setup.
+
+## How to Run the Website
+
+1. **Download the project folder.**
+2. **Open the folder on your computer.**
+3. **Double‑click `index.html`** — this will open the website in any modern web browser.
+4. You can now navigate the site normally using the menu links.
+
+## How to Use the Website
+
+### **Home Page**
+
+* Introduces the Cleat Store.
+* Provides navigation links to browse products, learn more about the store, or contact the seller.
+
+### **Products Page**
+
+* Displays all available cleats with images, names, prices, and size selection.
+* Users can:
+
+  * Choose a **cleat size** from a dropdown.
+  * Click **Add to Cart** (this triggers a JavaScript alert confirming size + selection).
+
+### **About Page**
+
+* Explains the purpose of the Cleat Store.
+* Describes what the site offers and the overall mission.
+
+### **Contact Page**
+
+* Contains a clean contact form with fields for:
+
+  * Name
+  * Email
+  * Message
+* Users can submit the form (front‑end only; no backend processing).
+
+## Features
+
+* Clean, simple UI.
+* A consistent layout across all pages.
+* Professional‑looking contact form.
+* Background image with adjustable transparency.
+* Product size selection handled through JavaScript.
+
+## Requirements
+
+* Any modern browser (Chrome, Edge, Firefox, Safari).
+* No server required — purely front‑end.
