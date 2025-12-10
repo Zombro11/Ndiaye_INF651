@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cleat Sales — Products</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* page-specific small tweaks */
+    .controls{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-bottom:12px;
+    }
+    .controls select, .controls input {
+      padding:8px;border-radius:8px;border:1px solid #e6e9f2;
+    }
+    .products-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+      gap:16px;
+      margin-top:6px;
+    }
+    .product-card{
+      background:var(--card);padding:12px;border-radius:12px;box-shadow:0 8px 20px rgba(15,25,60,0.04);
+      display:flex;flex-direction:column;gap:8px;
+    }
+    .product-card img{width:100%;height:140px;object-fit:cover;border-radius:8px;border:1px solid #eef2fb}
+    .product-meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+    .product-name{font-weight:700;margin:0}
+    .meta-small{font-size:0.85rem;color:var(--muted)}
+    .add-btn{margin-top:auto;padding:8px 10px;border-radius:8px;background:var(--accent);color:#fff;border:0;cursor:pointer}
+    .cart-panel{
+      background:var(--card);padding:12px;border-radius:12px;box-shadow:0 8px 20px rgba(15,25,60,0.04);
+      position:sticky;top:20px;
+    }
+    .cart-list{list-style:none;padding:0;margin:8px 0 0 0;max-height:240px;overflow:auto}
+    .cart-item{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #f0f3ff}
+    .small-muted{font-size:0.85rem;color:var(--muted)}
+    .empty{color:var(--muted);font-style:italic}
+    @media (max-width:860px){
+      .container{grid-template-columns:1fr}
+      .cart-panel{position:static}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="logo">Cleat Sales</h1>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Left column: filters + products -->
+    <section>
+      <h2>Our Cleats</h2>
+
+      <div class="controls">
+        <input id="search-input" type="search" placeholder="Search by name..." />
+        <select id="brand-filter">
+          <option value="all"> All brands</option>
+        </select>
+        <select id="size-filter">
+          <option value="all">All sizes</option>
+        </select>
+        <select id="sort-select">
+          <option value="default">Sort: By Price</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+        </select>
+        <button id="clear-filters">Clear</button>
+      </div>
+
+      <div id="products-grid" class="products-grid">
+        <!-- Product cards injected here by JS -->
+      </div>
+    </section>
+
+    <!-- Right column: cart summary -->
+    <aside class="cart-panel">
+      <h3>Cart</h3>
+      <div class="small-muted">Items in cart: <span id="cart-count">0</span></div>
+      <ul id="cart-list" class="cart-list">
+        <li class="empty">Your cart is empty.</li>
+      </ul>
+      <div style="margin-top:10px;font-weight:700">Total: $<span id="cart-total">0.00</span></div>
+      <button id="checkout-btn" class="add-btn" style="width:100%;margin-top:10px" disabled>Checkout</button>
+      <button id="empty-cart" style="margin-top:8px;width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;background:#fff;cursor:pointer">Empty Cart</button>
+      <p class="small-muted" style="margin-top:10px">Note: This cart doesn't process payments — it's just for demonstrating JS functionality for the project.</p>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year-products"></span> CleatSales — All rights reserved.</p>
+  </footer>
+
+  <script src="products.js"></script>
+</body>
+</html>

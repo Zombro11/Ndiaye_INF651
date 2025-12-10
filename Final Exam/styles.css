@@ -1,0 +1,236 @@
+:root{
+  --accent: #0b5fff;
+  --bg: #f7f8fb;
+  --card: #ffffff;
+  --muted: #666;
+  --radius: 10px;
+  --gap: 18px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  /* New sports-themed background */
+  background-image: url("Chiefs_Arrowhead_Stadium.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Add a soft overlay so text remains readable */
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5); /* transparency to keep it clean */
+  z-index: -1;
+}
+
+
+.site-header{
+  background:linear-gradient(90deg,#fff 0,#f2f6ff 100%);
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid #e6e9f2;
+}
+.logo{margin:0;color:var(--accent);letter-spacing:1px}
+.main-nav a{margin-left:14px;text-decoration:none;color:var(--muted)}
+
+.container{
+  max-width:980px;
+  margin:28px auto;
+  padding:0 18px;
+  flex:1 0 auto;
+  display:grid;
+  grid-template-columns: 1fr 380px;
+  gap:var(--gap);
+  align-items:start;
+}
+
+/* Make it responsive: single column on small screens */
+@media (max-width:860px){
+  .container{grid-template-columns:1fr; padding-bottom:30px}
+}
+
+/* Cards */
+.welcome-card, .featured-section, .promo-section{
+  background:var(--card);
+  padding:18px;
+  border-radius:var(--radius);
+  box-shadow:0 6px 18px rgba(20,30,80,0.06);
+}
+
+.welcome-card h2{margin:0 0 8px 0}
+.name-form{display:flex;gap:8px;margin-top:8px}
+.name-form input{flex:1;padding:8px;border-radius:8px;border:1px solid #e5e8f0}
+.name-form button{padding:8px 12px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+
+.greeting{margin-top:10px;color:var(--accent);font-weight:600}
+
+.slider{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+}
+.slider img{
+  width:100%;
+  max-width:360px;
+  height:220px;
+  object-fit:cover;
+  border-radius:10px;
+  border:1px solid #eceff8;
+}
+.caption{font-size:0.95rem;color:var(--muted)}
+
+.slider-controls{display:flex;gap:8px;justify-content:center;margin-top:8px}
+.slider-controls button{padding:6px 10px;border-radius:8px;border:1px solid #ddd;background:#fff;cursor:pointer}
+
+.promo-card{margin-top:8px;padding:12px;border-radius:8px;background:linear-gradient(90deg,#fff9eb,#fff);border:1px dashed #f2d38f}
+.hidden{display:none}
+
+.cta{grid-column:1 / -1; text-align:center; margin-top:10px}
+.btn{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none}
+
+.site-footer{
+  text-align:center;padding:18px;color:var(--muted);
+  border-top:1px solid #e6e9f2;
+}
+
+
+/* -------------------------
+   ABOUT PAGE STYLES
+--------------------------*/
+
+.about-section,
+.mission-section,
+.fun-facts,
+.image-hover {
+  margin: 30px 0;
+}
+
+.toggle-btn {
+  background-color: #0066cc;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.toggle-btn:hover {
+  background-color: #0053a3;
+}
+
+/* Hide elements with the "hidden" class */
+.hidden {
+  display: none;
+}
+
+/* Fun fact box */
+.fact-box {
+  background-color: #f2f2f2;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+  border-left: 4px solid #0066cc;
+}
+
+/* Image hover effect */
+.hover-img {
+  width: 250px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.hover-img:hover {
+  transform: scale(1.05);
+}
+
+
+/* -------------------------
+   CONTACT FORM STYLES
+--------------------------*/
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 15px;
+}
+
+#contactForm label {
+  font-weight: 600;
+  color: #333;
+}
+
+#contactForm input,
+#contactForm textarea {
+  padding: 12px;
+  border: 1px solid #d7d7d7;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fafafa;
+  transition: 0.2s ease;
+}
+
+/* Input focus effect */
+#contactForm input:focus,
+#contactForm textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(11, 95, 255, 0.15);
+}
+
+/* Submit button matches site style */
+#contactForm button {
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#contactForm button:hover {
+  background: #004bcc;
+  transform: translateY(-2px);
+}
+
+/* Status message */
+#form-status {
+  font-size: 1.05rem;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+#form-status.success {
+  background: #eaffea;
+  border-left: 4px solid #23a323;
+  color: #166f16;
+}
+
+#form-status.error {
+  background: #ffecec;
+  border-left: 4px solid #d23434;
+  color: #a30000;
+}
+
+

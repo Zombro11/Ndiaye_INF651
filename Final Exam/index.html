@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Cleat Sales — Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="logo">Cleat Sales</h1>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Welcome / personalization -->
+    <section class="welcome-card">
+      <h2 id="welcome-title">Welcome to "Cleat Sales"</h2>
+      <p>Who is visiting us today?</p>
+      <div class="name-form">
+        <input id="name-input" type="text" placeholder="Your name" />
+        <button id="name-submit">Say hi</button>
+      </div>
+      <p id="greeting" class="greeting"></p>
+    </section>
+
+    <!-- Featured slider -->
+    <section class="featured-section">
+      <h3>Featured Cleats</h3>
+      <div class="slider">
+        <img id="slide-img" alt="featured cleat" src="" />
+        <div id="slide-caption" class="caption"></div>
+      </div>
+      <div class="slider-controls">
+        <button id="prev-slide">◀</button>
+        <button id="next-slide">▶</button>
+      </div>
+    </section>
+
+    <!-- Promo reveal -->
+    <section class="promo-section">
+      <button id="promo-btn">Reveal Today's Deal</button>
+      <div id="promo-card" class="promo-card hidden">
+        <strong>Limited Offer:</strong> 20% off on all size 10 cleats — use code <em>CLEAT20</em> at checkout!
+      </div>
+    </section>
+
+    <!-- Quick link to products -->
+    <section class="cta">
+      <a class="btn" href="products.html">Shop Cleats ➜</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> CleatSales — All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
